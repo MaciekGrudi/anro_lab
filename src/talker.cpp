@@ -3,6 +3,7 @@
 #include <unistd.h>   //_getch
 #include <termios.h>
 
+//pobieranie znaku
 char getch(){
     
     char buf=0;
@@ -92,9 +93,6 @@ int main(int argc, char **argv)
     
 	}    
     
-
-   // ROS_INFO("%s", msg.data.c_str());
-
     chatter_pub.publish(msg);
 
     ros::spinOnce();
