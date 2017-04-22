@@ -41,19 +41,19 @@
   <joint name="base to link_1" type="fixed">
     <parent link="base_link"/>
     <child link="link_1"/>
-    <origin xyz="0 0 0.1" rpy="0 0 1"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0.78539"/>
   </joint>
 
   <joint name="link_1 to link_2" type="fixed">
     <parent link="link_1"/>
     <child link="link_2"/>
-    <origin xyz="0 0 0.2" rpy="-1.57 -0.6 0"/>
+    <origin xyz="0 0 0.2" rpy="-1.57 -0.523 0"/>
   </joint>
 
   <joint name="link_2 to link_3" type="fixed">
     <parent link="link_2"/>
     <child link="link_3"/>
-    <origin xyz="0.4 0 0" rpy="0 0 0.5"/>
+    <origin xyz="0.4 0 0" rpy="0 0 1.0471"/>
   </joint>
 
 </robot>
