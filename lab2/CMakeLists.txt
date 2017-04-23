@@ -4,3 +4,4 @@ project(lab2)
 find_package(catkin REQUIRED)
 
 catkin_package( )
+123
