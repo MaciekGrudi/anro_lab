@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(lab2)123
+project(lab2)
 
 find_package(catkin REQUIRED)
 
-catkin_package( )
+catkin_package( )123
