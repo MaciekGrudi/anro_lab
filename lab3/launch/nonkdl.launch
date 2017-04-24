@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="lab3" name="nonkdl" type="nonkdl"/>
+
+</launch>
