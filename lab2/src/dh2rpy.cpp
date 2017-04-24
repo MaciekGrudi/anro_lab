@@ -43,7 +43,7 @@ int main()
 	
 	Chain chain;
 	
-	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(0,0,0,t1))));
+	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(0,0,0.1,t1))));
 	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(0,-M_PI/2.0,0,t2))));
 	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(a2,0,0,t3))));	
 	
