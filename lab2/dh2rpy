@@ -1,0 +1,3 @@
+#!/bin/bash
+#otwieranie pliku dh2rpy bezposrednio z katalogu lab2
+~/catkin_ws/devel/lib/lab2/dh2rpy
