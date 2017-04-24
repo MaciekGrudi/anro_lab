@@ -5,6 +5,7 @@
         <geometry>
             <box size="0.4 0.4 0.2"/>
         </geometry>
+	<origin xyz="0 0 -0.1"/> 
         <material name="blue">
             <color rgba="0 0 .8 1"/>
         </material>
@@ -15,8 +16,8 @@
      <visual>
         <geometry>
          <box size="0.1 0.1 0.2" />
-        </geometry>
-        <origin xyz="0 0 0.1"/>       
+        </geometry>  
+	<origin xyz="0 0 0.1"/>     
      </visual>
   </link>
 
@@ -41,7 +42,7 @@
   <joint name="base to link_1" type="fixed">
     <parent link="base_link"/>
     <child link="link_1"/>
-    <origin xyz="0 0 0.1" rpy="0 0 0.78539"/>
+    <origin xyz="0 0 0" rpy="0 0 0.78539"/>
   </joint>
 
   <joint name="link_1 to link_2" type="fixed">
