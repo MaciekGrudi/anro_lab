@@ -12,13 +12,13 @@ using namespace KDL;
 void callback(const sensor_msgs::JointState & msg);
 void CalculateQuaternion();
 
-double t1,t3,t4,a3=0.4, a4=0.2,d2=0.2;
+double t1,t2,t3,a2=0.4, a3=0.2,d2=0.2;
 double Quat[4];
 double M[3][3];
 double pos[3];
 double init_t1=0;
-double init_t3=-M_PI/4;
-double init_t4=M_PI/4;
+double init_t2=-M_PI/4;
+double init_t3=M_PI/4;
 void calculateQuaternion(double T[][3]);
 
 int main(int argc, char **argv)
@@ -37,13 +37,13 @@ int main(int argc, char **argv)
 	
 	//stworzenie łancucha konematycznego
 	KDL::Chain chain;
-	t1=init_t1;	t3=init_t3; t4=init_t4;	
+	t1=init_t1;	t2=init_t2; t3=init_t3;	
 	
 	chain.addSegment(Segment(Joint(Joint::None),Frame(Frame::DH(0,0,0,0)))); //a, alpha, d, theta
 	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(0,0,d2,init_t1))));
 	chain.addSegment(Segment(Joint(Joint::None),Frame(Frame::DH(0,-M_PI/2.0,0,0))));
-	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(a3,0,0,init_t3))));
-	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(a4,0,0,init_t4))));	
+	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(a2,0,0,init_t2))));
+	chain.addSegment(Segment(Joint(Joint::RotZ),Frame(Frame::DH(a3,0,0,init_t3))));	
 	
 	
 	//utworzenie solveraros 
@@ -57,8 +57,8 @@ int main(int argc, char **argv)
 	    ROS_DEBUG_STREAM("i "<<chain.getNrOfJoints());
 	    
 	    q(0)=t1;
-	    q(1)=t3;
-      	q(2)=t4;
+	    q(1)=t2;
+      	    q(2)=t3;
        	
       	solver.JntToCart(q,F_results);
        	int k=0;
@@ -96,8 +96,8 @@ int main(int argc, char **argv)
 void callback(const sensor_msgs::JointState & msg)
 {
 	t1=msg.position[0];
-	t3=msg.position[1];
-	t4=msg.position[2];
+	t2=msg.position[1];
+	t3=msg.position[2];
 			
 } 
 
